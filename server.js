@@ -12,6 +12,11 @@ const app = express();
 // Middleware to parse JSON
 app.use(express.json());
 
+//Routes connection here
+// Register route
+const companyRoutes = require("./routes/Company");
+app.use("/api/company", companyRoutes);
+
 // MongoDB connection string from .env file
 const mongoURI = process.env.MONGO_URI;
 
